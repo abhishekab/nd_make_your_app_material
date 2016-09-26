@@ -31,6 +31,8 @@ import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
 import com.squareup.picasso.Picasso;
 
+import static com.example.xyzreader.R.color.deep_orange_a200;
+
 /**
  * An activity representing a list of Articles. This activity has different presentations for
  * handset and tablet-size devices. On handsets, the activity presents a list of items, which when
@@ -57,6 +59,8 @@ public class ArticleListActivity extends AppCompatActivity implements
        // final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        mSwipeRefreshLayout.setProgressBackgroundColorSchemeColor(getResources().getColor(R.color.deep_orange_a200));
+        mSwipeRefreshLayout.setColorSchemeResources(R.color.white,R.color.green_500,R.color.green_800);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -113,6 +117,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+        Log.d(LOG_TAG,"Load Finished");
         Adapter adapter = new Adapter(cursor);
         adapter.setHasStableIds(true);
         mRecyclerView.setAdapter(adapter);

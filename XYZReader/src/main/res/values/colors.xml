@@ -24,6 +24,10 @@
     <color name="green_500">#4CAF50</color>
     <color name="green_800">#2E7D32</color>
     <color name="deep_orange_a200">#FF6E40</color>
+
+    <color name="color_dark_heading">#04561A</color>
     
     <color name="ltgray">#ffe0e0e0</color>
+
+    <color name="white">#FFFFFF</color>
 </resources>
